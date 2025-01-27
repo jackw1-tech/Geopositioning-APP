@@ -1,2 +1,15 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+
+
+:root {
+    --pluservice-color: #26A59C;
+    --ion-color-primary: var(--pluservice-color);
+    --ion-color-primary-rgb: 38, 165, 156;
+    --ion-color-primary-contrast: #ffffff; 
+    --ion-color-primary-shade: #1c7c6f;
+    --ion-color-primary-tint: #5ed7d2;
+
+   
+  }
+  

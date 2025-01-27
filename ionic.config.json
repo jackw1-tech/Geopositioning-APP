@@ -1,7 +1,10 @@
 {
-  "name": "geo",
+  "name": "Geopositioning",
   "integrations": {
-    "capacitor": {}
+    "capacitor": {
+      "enabled": false
+    },
+    "cordova": {}
   },
   "type": "angular"
 }

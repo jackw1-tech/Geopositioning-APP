@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-myplugin" version="0.0.1" xmlns="http://apache.org/cordova/ns/plugins/1.0" xmlns:android="http://schemas.android.com/apk/res/android">
+<name>MyPlugin</name>
+<js-module name="MyPlugin" src="www/MyPlugin.js">
+<clobbers target="cordova.plugins.MyPlugin" /></js-module><platform name="android">
+<config-file parent="/*" target="res/xml/config.xml"><feature name="MyPlugin">
+
+<param name="android-package" value="com.example.myplugin.MyPlugin" />
+
+
+</feature></config-file><config-file parent="/*" target="AndroidManifest.xml">
+</config-file><source-file src="src/android/com/example/myplugin/MyPlugin.java" target-dir="src/cordova-plugin-myplugin/MyPlugin" /></platform></plugin>

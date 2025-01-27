@@ -1,20 +1,109 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Geopositioning</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content class="ion-padding">
+  <ion-grid class="ion-text-center">
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center shadow-sm rounded-lg">
+          <ion-card-header>
+            <ion-card-title>
+              <h2 class="ion-text">Current Position</h2>
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text>
+              <h3>Current Latitude: <strong>{{latitudineCorrente}}</strong></h3>
+            </ion-text>
+            <ion-text>
+              <h3>Current Longitude: <strong>{{longitudineCorrente}}</strong></h3>
+            </ion-text>
+            <ion-text>
+              <h3>Accuracy: <strong>{{accuratezza}}</strong></h3>
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center shadow-sm rounded-lg">
+          <ion-card-header>
+            <ion-card-title> <h3 class="ion-text">Enter Latitude</h3></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input
+              placeholder="Enter latitude (e.g., 45.1234)"
+              type="number"
+              [(ngModel)]="latitudineInserita_appoggio"
+              (ngModelChange)="verifyInput()"
+              class="custom-input"
+              clear-input
+              style="max-width: 100%;"
+            ></ion-input>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row>
+      <ion-col>
+        <ion-card class="ion-text-center shadow-sm rounded-lg">
+          <ion-card-header>
+            <ion-card-title>  <h3 class="ion-text">Enter Longitude</h3></ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-input
+               placeholder="Enter longitude (e.g., -75.1234)"
+              type="number"
+              [(ngModel)]="longitudineInserita_appoggio"
+              (ngModelChange)="verifyInput()"
+              class="custom-input"
+              clear-input
+              style="max-width: 100%;"
+            ></ion-input>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row>
+      <ion-col>
+        <ion-button color="primary" (click)="updatePosition()" [disabled]="bottone_disabilitato">
+          Update Position
+          <ion-icon slot="end" name="arrow-forward-circle"></ion-icon>
+        </ion-button>
+      </ion-col>
+    </ion-row>
+
+
+    <ion-row *ngIf="bottone_cliccato">
+      <ion-col>
+        <ion-card class="ion-text-center shadow-sm rounded-lg">
+          <ion-card-header>
+            <ion-card-title>Entered Position</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ion-text>
+              <h3>Entered Latitude: <strong>{{latitudineInserita}}</strong></h3>
+            </ion-text>
+            <ion-text>
+              <h3>Entered Longitude: <strong>{{longitudineInserita}}</strong></h3>
+            </ion-text>
+            <ion-text>
+              <h3>Distance from point: <strong>{{distanza}}</strong></h3>
+            </ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
